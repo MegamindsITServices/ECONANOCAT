@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import useAuthStore from './stores/authStore';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 
 function App() {
@@ -13,8 +15,9 @@ function App() {
 
   return (
     <>
+    <Navbar/>
       <Routes>
-        <Route path="/" element={<div>Home</div>} />        
+        <Route path="/" element={<Home/>}/>        
 
         <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
       </Routes>

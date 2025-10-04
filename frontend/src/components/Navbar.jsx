@@ -1,22 +1,38 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Users, ChevronDown, LayoutDashboard, LogOut, Settings } from 'lucide-react'; // Added LayoutDashboard and Settings icons
-import useAuthStore from '../stores/authStore';
-import { toast } from 'react-hot-toast';
+import {  User } from "lucide-react"
+import { Link } from "react-router-dom";
 
-function Navbar() {
-  const { user, logout } = useAuthStore();
-  const navigate = useNavigate();
-  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-
-  const handleLogout = () => {
-    logout();
-    navigate('/login');
-  };
-
+export default function Navbar() {
   return (
-    <div>Navbar</div>
-  );
-}
+    <nav className="w-full h-[92px] p-1 bg-white opacity-100 flex items-center">
+      <div className="w-[1440px] mx-auto flex items-center justify-between px-8">
+        {/* Logo */}
+       <div className="flex-shrink-0">
+                <Link to="/">
+                 <div className="text-2xl font-bold text-gray-500">Logo</div>
+                
+                </Link>
+              </div>
 
-export default Navbar;
+        {/* Menu */}
+        <ul className="flex items-center space-x-8 text-sm text-gray-500">
+          {["Home", "About us","Product","Services","Contact Us"].map(
+            (item) => (
+              <li
+                key={item}
+                className={`cursor-pointer hover:text-black
+                }`}
+              >
+                {item}
+              </li>
+            )
+          )}
+        </ul>
+
+        {/* Profile Icon */}
+        <div className="p-2 rounded-full hover:bg-gray-100 cursor-pointer">
+          <User className="w-5 h-5 text-black" />
+        </div>
+      </div>
+    </nav>
+  )
+}
