@@ -16,24 +16,6 @@ const PLACEHOLDER_IMAGES = [
   },
 ];
 
-const FOLLOW_LINKS = [
-  { label: "WhatsApp", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "Facebook", href: "#" },
-];
-
-const QUICK_LINKS = [
-  { label: "About Us", href: "#" },
-  { label: "Products/Services", href: "#" },
-  { label: "Contact Us", href: "#" },
-];
-
-const PRODUCT_LINKS = [
-  { label: "Featured Products", href: "#" },
-  { label: "Top Rated Products", href: "#" },
-  { label: "Latest Products", href: "#" },
-];
-
 const Home = () => {
       const [carouselImages, setCarouselImages] = useState([]);
 
@@ -47,12 +29,12 @@ const Home = () => {
         <Carousel
           images={carouselImages}
           interval={5000}
-          className="h-[50vh] w-full object-cover sm:h-[70vh] md:h-[80vh]"
+          className="w-full aspect-[16/11] sm:aspect-[21/8]"
           priority
         />
       </section>
 
-      <section className="w-full bg-[#E6F6F3] py-20">
+      <section className="max-w-8xl bg-[#E6F6F3] py-20">
         <div className="flex w-full flex-col gap-12 px-2 md:px-10">
           <div className="space-y-4">
             <h2 className="text-4xl font-bold text-gray-900 md:text-5xl">
@@ -91,7 +73,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="w-full bg-[#F6F6F6] py-16 md:py-20">
+      <section className="max-w-8xl bg-[#F6F6F6] py-16 md:py-20">
         <div className="px-2 md:px-10 space-y-12 ">
           <div className="space-y-3">
             <h2 className="text-4xl font-bold text-gray-900 md:text-5xl">
@@ -195,81 +177,6 @@ const Home = () => {
         </div>
       </section>
 
-      <footer className="w-full bg-[#D3EDE8] py-16">
-        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 md:px-12 lg:flex-row lg:gap-20">
-          <div className="flex max-w-sm flex-col gap-6">
-            <div className="h-[54px] w-[195px] rounded-lg bg-red-200 mix-blend-multiply" />
-            <div>
-              <h4 className="text-xl font-semibold text-gray-900">ECNANOCAT Pvt. Ltd.</h4>
-              <p className="text-base text-gray-900">All Rights Reserved</p>
-            </div>
-            <div className="space-y-2 text-base leading-6 text-gray-900">
-              <p>Address: 123 Business Avenue, City, State</p>
-              <p>Phone: +91-XXXXXXXXXX</p>
-              <p>Email: info@[company].com</p>
-            </div>
-          </div>
-
-          <div className="grid flex-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-            <div className="space-y-5">
-              <h5 className="text-2xl font-semibold text-[#1B1C1E]">Follow Us On</h5>
-              <ul className="space-y-4 text-lg text-[#1B1C1E]">
-                {FOLLOW_LINKS.map(({ label, href }) => (
-                  <li key={label}>
-                    <a href={href} className="flex items-center gap-2 hover:underline">
-                      <span>➜</span>
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-5">
-              <h5 className="text-2xl font-semibold text-[#1B1C1E]">Quick Links</h5>
-              <ul className="space-y-4 text-lg text-[#1B1C1E]">
-                {QUICK_LINKS.map(({ label, href }) => (
-                  <li key={label}>
-                    <a href={href} className="hover:underline">
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-5">
-              <h5 className="text-2xl font-semibold text-[#1B1C1E]">Products / Services</h5>
-              <ul className="space-y-4 text-lg text-[#1B1C1E]">
-                {PRODUCT_LINKS.map(({ label, href }) => (
-                  <li key={label}>
-                    <a href={href} className="hover:underline">
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      <div className="w-full bg-[#173126] py-5">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-[#F3F4F8] md:flex-row md:px-12">
-          <div className="flex items-center gap-2 text-sm font-semibold">
-            <span>©</span>
-            <span>2025 Copyright</span>
-          </div>
-          <div className="flex items-center gap-6 text-sm font-semibold">
-            <a href="#" className="hover:underline">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:underline">
-              Terms & Conditions
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

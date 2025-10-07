@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import useAuthStore from './stores/authStore';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -15,13 +16,13 @@ function App() {
 
   return (
     <>
-    <Navbar/>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>        
 
         <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
       </Routes>
-
+      <Footer/>
       <Toaster
         position="top-center"
         toastOptions={{
