@@ -5,6 +5,7 @@ import useAuthStore from './stores/authStore';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home/>}/>        
 
         <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
       <Footer/>
       <Toaster

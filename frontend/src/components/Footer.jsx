@@ -23,7 +23,7 @@ const PRODUCT_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#D3EDE8]">
+    <footer className="bg-[#D3EDE8] max-w-8xl">
       {/* Main Footer Content */}
       <div className="mx-auto max-w-8xl px-6 py-16 lg:px-8">
         {/* 3. Use a responsive grid for the main layout */}
