@@ -1,6 +1,9 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState} from 'react'
+import { Link } from "react-router-dom";
+
 import axiosInstance from '../services/axiosInstance';
 import Carousel from '../components/ui/carousel';
+import { motion } from 'framer-motion';
 const Home = () => {
       const [carouselImages, setCarouselImages] = useState([]);
 
@@ -41,6 +44,9 @@ const Home = () => {
      <section className="relative w-full">
                 <Carousel images={carouselImages} interval={5000} className="h-[50vh] sm:h-[70vh] md:h-[80vh] w-full object-cover" priority={true} />
      </section>
+
+    
+   
 
     </div>
   )

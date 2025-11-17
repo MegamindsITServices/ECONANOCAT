@@ -4,6 +4,9 @@ import { Toaster } from 'react-hot-toast';
 import useAuthStore from './stores/authStore';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import Services from './pages/Services';
+import Product from './pages/Product';
+
 
 
 function App() {
@@ -17,7 +20,9 @@ function App() {
     <>
     <Navbar/>
       <Routes>
-        <Route path="/" element={<Home/>}/>        
+        <Route path="/home" element={<Home/>}/>      
+          <Route path="/product" element={<Product/>}/> 
+            <Route path="/services" element={<Services/>}/>       
 
         <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
       </Routes>

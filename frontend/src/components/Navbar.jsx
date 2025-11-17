@@ -7,8 +7,8 @@ export default function Navbar() {
       <div className="w-[1440px] mx-auto flex items-center justify-between px-8">
         {/* Logo */}
        <div className="flex-shrink-0">
-                <Link to="/">
-                 <div className="text-2xl font-bold text-gray-500">Logo</div>
+                <Link to="/home">
+                 <div className="text-2xl font-bold text-gray-500 ">Econanocat</div>
                 
                 </Link>
               </div>
@@ -17,13 +17,13 @@ export default function Navbar() {
         <ul className="flex items-center space-x-8 text-sm text-gray-500">
           {["Home", "About us","Product","Services","Contact Us"].map(
             (item) => (
-              <li
+              <Link to={`/${item.toLowerCase().split(" ").join("-")}`}
                 key={item}
                 className={`cursor-pointer hover:text-black
                 }`}
               >
                 {item}
-              </li>
+              </Link>
             )
           )}
         </ul>
