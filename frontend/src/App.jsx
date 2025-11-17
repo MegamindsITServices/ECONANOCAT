@@ -6,6 +6,8 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Product from './pages/Product';
+import Footer from './components/Footer';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 
@@ -18,15 +20,16 @@ function App() {
 
   return (
     <>
-    <Navbar/>
+      <Navbar/>
       <Routes>
         <Route path="/home" element={<Home/>}/>      
           <Route path="/product" element={<Product/>}/> 
             <Route path="/services" element={<Services/>}/>       
 
         <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
-
+      <Footer/>
       <Toaster
         position="top-center"
         toastOptions={{

@@ -1,38 +1,91 @@
-import {  User } from "lucide-react"
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { User, ShoppingCart, Menu, X } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
+
+const NAV_LINKS = [
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Products", to: "/products" },
+  { label: "Services", to: "/services" },
+  { label: "Contact Us", to: "/contact" },
+];
+
+const NavLinkItem = ({ to, label, onClick }) => (
+  <NavLink
+    to={to}
+    onClick={onClick}
+    className={({ isActive }) =>
+      `relative px-1 py-1 font-medium text-[#0D0A10] transition-colors duration-300 hover:text-black 
+      after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-black after:origin-left after:transition-transform after:duration-300
+      ${isActive ? "font-semibold text-black after:scale-x-100" : "after:scale-x-0 hover:after:scale-x-100"}`
+    }
+  >
+    {label}
+  </NavLink>
+);
 
 export default function Navbar() {
-  return (
-    <nav className="w-full h-[92px] p-1 bg-white opacity-100 flex items-center">
-      <div className="w-[1440px] mx-auto flex items-center justify-between px-8">
-        {/* Logo */}
-       <div className="flex-shrink-0">
-                <Link to="/home">
-                 <div className="text-2xl font-bold text-gray-500 ">Econanocat</div>
-                
-                </Link>
-              </div>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-        {/* Menu */}
-        <ul className="flex items-center space-x-8 text-sm text-gray-500">
-          {["Home", "About us","Product","Services","Contact Us"].map(
-            (item) => (
-              <Link to={`/${item.toLowerCase().split(" ").join("-")}`}
-                key={item}
-                className={`cursor-pointer hover:text-black
-                }`}
-              >
-                {item}
-              </Link>
-            )
-          )}
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const handleLinkClick = () => isMenuOpen && setIsMenuOpen(false);
+
+  return (
+    <nav className="sticky top-0 z-50 w-full bg-[#EAF1EF] shadow-sm">
+      <div
+        className={`mx-auto flex w-full items-center justify-between px-4 transition-all duration-300 md:px-8 lg:px-12 
+        ${isScrolled ? "h-14" : "h-18"}`}
+      >
+        {/* Logo */}
+        <Link
+          to="/"
+          className={`flex-shrink-0 transition-transform duration-300 
+            ${isScrolled ? "scale-90" : "scale-100"}`}
+        >
+          <div className="h-[54px] w-[195px] rounded-lg bg-red-200 mix-blend-multiply" />
+        </Link>
+
+        {/* Desktop Menu */}
+        <ul className="hidden items-center text-[17px] text-[#0D0A10] md:flex md:gap-6 lg:gap-12">
+          {NAV_LINKS.map(({ label, to }) => (
+            <li key={label}>
+              <NavLinkItem to={to} label={label} />
+            </li>
+          ))}
         </ul>
 
-        {/* Profile Icon */}
-        <div className="p-2 rounded-full hover:bg-gray-100 cursor-pointer">
-          <User className="w-5 h-5 text-black" />
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu}>
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="absolute left-0 w-full bg-[#EAF1EF] shadow-md md:hidden">
+          <ul className="flex flex-col items-center gap-8 p-8 text-lg">
+            {NAV_LINKS.map(({ label, to }) => (
+              <li key={label}>
+                <NavLinkItem
+                  to={to}
+                  label={label}
+                  onClick={handleLinkClick}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
-  )
+  );
 }
