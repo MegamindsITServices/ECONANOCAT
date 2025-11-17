@@ -60,17 +60,14 @@ const Home = () => {
               ECNANOCAT Pvt. Ltd.
             </h2>
               <p>
-                Welcome to ECNANOCAT Pvt. Ltd., a trusted name in delivering
-                innovative solutions and exceptional services. Established with
-                a vision to create lasting value, we specialize in technology
+                Econanocat Pvt. Ltd. is a technology driven company specializing in the
+              development and manufacturing of
+              advanced nanocatalysts, additives,
+               and functional nanoparticles for
+               emission control and performance enhancement
+                we specialize in technology
                 enabled growth and are committed to pushing the benchmarks of
                 excellence.
-              </p>
-              <p>
-                With a focus on quality, innovation, and customer satisfaction,
-                we continuously strive to set new standards in our field. Our
-                mission is simple: to empower organizations, enable progress,
-                and make a meaningful difference in the communities we serve.
               </p>
             </div>
           </div>
