@@ -60,14 +60,12 @@ const Home = () => {
               ECNANOCAT Pvt. Ltd.
             </h2>
               <p>
-                Econanocat Pvt. Ltd. is a technology driven company specializing in the
-              development and manufacturing of
-              advanced nanocatalysts, additives,
-               and functional nanoparticles for
-               emission control and performance enhancement
-                we specialize in technology
-                enabled growth and are committed to pushing the benchmarks of
-                excellence.
+               Econanocat Pvt. Ltd. is a technology-driven company specializing in the
+                development and manufacturing of advanced nanocatalysts, additives, and functional
+                 nanoparticles for emission control and performance enhancement. 
+                 Founded with a vision to bridge nanotechnology and clean mobility, 
+                 Econanocat focuses on innovative catalyst materials designed to reduce Nitrogen Oxides (NOx)
+                  and other harmful emissions from automotive and industrial sources.
               </p>
             </div>
           </div>

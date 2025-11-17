@@ -21,9 +21,9 @@ const Aboutus = () => {
           <div className="w-full h-[2px] bg-black mb-6"></div>
 
           <p className="text-gray-800 leading-relaxed mb-6 font-semibold">
-            Econanocat Pvt. Ltd. is a technology-driven company specializing in 
-            the development and manufacturing of advanced nanocatalysts, additives, 
-            and functional nanoparticles for emission control and performance enhancement.
+           Econanocat Pvt. Ltd. is a technology-driven company specializing in the development and manufacturing of advanced nanocatalysts, additives, and functional nanoparticles for emission control and performance enhancement. Founded with a vision to bridge nanotechnology and clean mobility, Econanocat focuses on innovative catalyst materials designed to reduce Nitrogen Oxides (NOx) and other harmful emissions from automotive and industrial sources.
+  With deep expertise in nanomaterial engineering, surface modification, and catalytic reaction optimization, Econanocat delivers next-generation solutions that meet stringent environmental regulations while improving fuel efficiency and system durability. Our R&D and production facilities are equipped with state-of-the-art instruments for nano-synthesis, characterization, and performance validation — ensuring consistent quality and reliability.
+   At Econanocat, we believe that sustainable innovation is the key to a cleaner and greener future. Through our continuous efforts in material science and catalytic technology, we aim to support the global transition toward low-emission and carbon-neutral transportation.
           </p>
 
           {/* Mission */}
@@ -50,7 +50,7 @@ const Aboutus = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col "
+          className="flex flex-col pt-7 "
         >
           <img
             src="/images/aboutimg1.png"
