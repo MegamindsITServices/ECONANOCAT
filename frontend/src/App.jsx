@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import useAuthStore from './stores/authStore';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
 import Product from './pages/Product';
 import Footer from './components/Footer';
