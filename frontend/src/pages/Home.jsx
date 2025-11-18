@@ -9,7 +9,7 @@ const PLACEHOLDER_IMAGES = [
   {
     id: 1,
     image:
-      '../public/Screenshot 2025-11-14 215835.png',
+      '/images/Screenshot 2025-11-14 215835.png',
     alt: 'Banner',
   }
 ];
@@ -34,7 +34,7 @@ const Home = () => {
 
       <section className="relative w-full">
         <img
-          src="./public/image.png"
+          src="/images/image.png"
           className="h-full w-full object-cover"
         />
       </section>
