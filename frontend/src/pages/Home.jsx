@@ -5,19 +5,13 @@ const PLACEHOLDER_IMAGES = [
   {
     id: 1,
     image:
-      'https://eatanytime.in/cdn/shop/files/Desktop_View_28b67e87-641c-43ca-816b-5657b0b3eeba.png?v=1741242822&width=2000',
-    alt: 'Premium organic snacks',
-  },
-  {
-    id: 2,
-    image:
-      'https://eatanytime.in/cdn/shop/files/Desktop_View_6.png?v=1744192109&width=2000',
-    alt: 'Healthy snack options',
-  },
+      '../public/Screenshot 2025-11-14 215835.png',
+    alt: 'Banner',
+  }
 ];
 
 const Home = () => {
-      const [carouselImages, setCarouselImages] = useState([]);
+  const [carouselImages, setCarouselImages] = useState([]);
 
   useEffect(() => {
     setCarouselImages(PLACEHOLDER_IMAGES);
@@ -34,6 +28,14 @@ const Home = () => {
         />
       </section>
 
+      <section className="relative w-full">
+        <img
+          src="./public/image.png"
+          className="h-full w-full object-cover"
+        />
+      </section>
+
+      {/*About Us*/}
       <section className="max-w-8xl bg-[#E6F6F3] py-20">
         <div className="flex w-full flex-col gap-12 px-2 md:px-10">
           <div className="space-y-4">
@@ -51,28 +53,94 @@ const Home = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-6 text-lg leading-[1.7] text-gray-800">
+            <div className="flex flex-col gap-5 text-lg leading-[1.7] text-gray-800">
               <h2 className="text-3xl font-bold text-gray-900 md:text-3xl">
-              ECNANOCAT Pvt. Ltd.
-            </h2>
+                ECNANOCAT Pvt. Ltd.
+              </h2>
               <p>
-                Welcome to ECNANOCAT Pvt. Ltd., a trusted name in delivering
-                innovative solutions and exceptional services. Established with
-                a vision to create lasting value, we specialize in technology
-                enabled growth and are committed to pushing the benchmarks of
-                excellence.
+                Econanocat Pvt. Ltd. is a technology-driven
+                company specializing in the development and
+                manufacturing of advanced nanocatalysts, additives,
+                and functional nanoparticles for emission control
+                and performance enhancement
               </p>
+              <h3 className='text-2xl font-bold text-gray-900 md:text-2xl'>Mission</h3>
               <p>
-                With a focus on quality, innovation, and customer satisfaction,
-                we continuously strive to set new standards in our field. Our
-                mission is simple: to empower organizations, enable progress,
-                and make a meaningful difference in the communities we serve.
+                 To develop and deliver high-performance
+                  nanocatalysts and functional additives that enable
+                  cleaner combustion, reduced emissions, and
+                  improved efficiency across automotive and
+                  industrial applications — driving sustainability
+                  through nanotechnology innovation.
+              </p>
+              <h3 className='text-2xl font-bold text-gray-900 md:text-2xl'>Vision</h3>
+              <p>
+                To be a global leader in nanocatalytic and
+                nanomaterial solutions that empower industries to
+                achieve zero-emission goals, foster sustainable
+                development, and create a healthier environment for
+                future generations.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/*Our Team*/}
+      <section className="bg-[#212121] py-20 font-serif text-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="text-5xl">Our Team</h2>
+            <div className="mx-auto mt-4 h-px w-full max-w-md bg-white"></div>
+          </div>
+          <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-3">
+            {/* Team Member 1 */}
+            <div className="flex flex-col items-center">
+              <div className="mb-4 h-[400px] w-[300px] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Dr. Santhana Krishnan"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl">Dr. Santhana Krishnan</h3>
+              <p className="font-sans text-sm font-bold tracking-widest">FOUNDER</p>
+            </div>
+            {/* Team Member 2 */}
+            <div className="flex flex-col items-center">
+              <div className="mb-4 h-[400px] w-[300px] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Dr. Santhana Krishnan"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl">Dr. Preethi</h3>
+              <p className="font-sans text-sm font-bold tracking-widest">TECHNICAL ADVISER</p>
+            </div>
+            {/* Team Member 3 */}
+            <div className="flex flex-col items-center">
+              <div className="mb-4 h-[400px] w-[300px] overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Dr. Santhana Krishnan"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="text-2xl">Yves Dunne</h3>
+              <p className="font-sans text-sm font-bold tracking-widest">SENIOR HAIR STYLIST</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/*Our Services*/}
+
+      {/*Our Products*/}
+
+      {/*Take care*/}
+
+      {/*Contact Us*/}
       <section className="max-w-8xl bg-[#F6F6F6] py-16 md:py-20">
         <div className="px-2 md:px-10 space-y-12 ">
           <div className="space-y-3">

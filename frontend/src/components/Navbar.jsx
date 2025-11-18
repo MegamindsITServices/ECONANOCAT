@@ -16,7 +16,7 @@ const NavLinkItem = ({ to, label, onClick }) => (
     to={to}
     onClick={onClick}
     className={({ isActive }) =>
-      `relative px-1 py-1 font-medium text-[#0D0A10] transition-colors duration-300 hover:text-black ` +
+      `relative px-1 py-1 font-medium text-[#0D0A10] transition-colors duration-300 hover:text-black focus:outline-none ` +
       `after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-black after:origin-left after:transition-transform after:duration-300 ` +
       (isActive
         ? "font-semibold text-black after:scale-x-100"
