@@ -31,7 +31,7 @@ export default function Footer() {
           
           {/* Column 1: Company Info */}
           <div className="space-y-4">
-            <div className="h-[54px] w-[195px] rounded-lg bg-[#D9D9D9]" />
+            <div className="text-[#4FAA84] text-2xl font-bold">ECONANOCAT</div>
             <div>
               <p className="font-bold text-lg">ECNANOCAT Pvt. Ltd.</p>
               <p className="text-sm font-medium">All Rights Reserved</p>
@@ -42,9 +42,10 @@ export default function Footer() {
           <div className="space-y-4">
             <h5 className="font-bold text-lg">Contact</h5>
             <div className="space-y-2 text-sm font-medium">
-              <p>Address: 123 Business Avenue, City, State</p>
-              <p>Phone: +91-XXXXXXXXXX</p>
-              <p>Email: info@[company].com</p>
+              <p>Address: No. 4/9 kothandam street, sekar nagar
+                  West saidapet chennai 600083</p>
+              <p>Phone:  +91 98414 89297</p>
+              <p>Email:  ecocatnano@gmail.com</p>
             </div>
           </div>
 
