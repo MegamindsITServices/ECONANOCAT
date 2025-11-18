@@ -5,8 +5,12 @@ import useAuthStore from './stores/authStore';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
+import Product from './pages/Product';
 import Footer from './components/Footer';
+import Aboutus from './pages/Aboutus';
 import NotFoundPage from './pages/NotFoundPage';
+
 
 
 function App() {
@@ -20,8 +24,10 @@ function App() {
     <>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Home/>}/>        
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/" element={<Home/>}/>      
+          <Route path="/product" element={<Product/>}/> 
+            <Route path="/services" element={<Services/>}/>       
+             <Route path="/about" element={<Aboutus/>}/>   
 
         <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
         <Route path="*" element={<NotFoundPage/>} />

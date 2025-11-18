@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
+
+import React, { useEffect,useState} from 'react'
+import axiosInstance from '../services/axiosInstance';
 import Carousel from '../components/ui/carousel';
+
+
 
 const PLACEHOLDER_IMAGES = [
   {
@@ -47,7 +51,7 @@ const Home = () => {
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className="overflow-hidden rounded-3xl">
               <img
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1280&q=80"
+                src="/images/aboutimg2.png"
                 alt="Team collaboration at ECNANOCAT"
                 className="h-full w-full object-cover"
               />
@@ -244,6 +248,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+    
+   
 
     </div>
   );
