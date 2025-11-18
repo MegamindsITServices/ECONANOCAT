@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;500;600;700&display=swap');
+
+@theme {
+  --font-bodoni: "Bodoni Moda", serif;
+}
 
 /* Ensure consistent line-clamp behavior */
 .line-clamp-2 {

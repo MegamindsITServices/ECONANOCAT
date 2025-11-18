@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { User, ShoppingCart, Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -27,22 +27,48 @@ const NavLinkItem = ({ to, label, onClick }) => (
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setIsScrolled(currentY > 10);
 
-    window.addEventListener("scroll", handleScroll);
+      // If mobile menu is open, keep navbar visible
+      if (isMenuOpen) {
+        setIsHidden(false);
+        lastScrollY.current = currentY;
+        return;
+      }
+
+      // If scrolling down and beyond threshold, hide navbar
+      if (currentY > lastScrollY.current && currentY > 100) {
+        setIsHidden(true);
+      } else {
+        // scrolling up -> show navbar
+        setIsHidden(false);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const handleLinkClick = () => isMenuOpen && setIsMenuOpen(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#EAF1EF] shadow-sm">
+    <nav
+      className={`sticky top-0 z-50 w-full transition-transform duration-300 ${
+        isHidden ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
       <div
-        className={`mx-auto flex w-full items-center justify-between px-4 transition-all duration-300 md:px-8 lg:px-12 
-        ${isScrolled ? "h-14" : "h-18"}`}
+        className={`mx-auto flex w-full items-center justify-between px-4 transition-all duration-300 md:px-8 lg:px-12
+        bg-[#EAF1EF]/60 backdrop-blur-sm ${isScrolled ? "h-14 shadow-md" : "h-18 shadow-sm"}`}
       >
         {/* Logo */}
         <Link
@@ -50,7 +76,7 @@ export default function Navbar() {
           className={`flex-shrink-0 transition-transform duration-300 
             ${isScrolled ? "scale-90" : "scale-100"}`}
         >
-          <div className="h-[54px] w-[195px] rounded-lg bg-red-200 mix-blend-multiply" />
+          <div className="text-[#4FAA84] text-2xl font-bold">ECONANOCAT</div>
         </Link>
 
         {/* Desktop Menu */}
@@ -72,7 +98,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute left-0 w-full bg-[#EAF1EF] shadow-md md:hidden">
+        <div className="absolute left-0 w-full bg-[#EAF1EF]/90 shadow-md md:hidden">
           <ul className="flex flex-col items-center gap-8 p-8 text-lg">
             {NAV_LINKS.map(({ label, to }) => (
               <li key={label}>

@@ -1,110 +1,9 @@
 import React, { useEffect,useState} from 'react'
-import axiosInstance from '../services/axiosInstance';
-import Carousel from '../components/ui/carousel';
 
-
-
-const PLACEHOLDER_IMAGES = [
-  {
-    id: 1,
-    image:
-      '/images/Screenshot 2025-11-14 215835.png',
-    alt: 'Banner',
-  },
-  {
-    id: 2,
-    image:
-      '/images/image.png',
-    alt: 'Banner',
-  },
-  {
-    id: 2,
-    image:
-      '/images/Banner3.png',
-    alt: 'Banner',
-  }
-];
-
-const Home = () => {
-  const [carouselImages, setCarouselImages] = useState([]);
-
-  useEffect(() => {
-    setCarouselImages(PLACEHOLDER_IMAGES);
-  }, []);
+const ContactUs = () => {
 
   return (
     <div className="flex flex-col bg-white">
-      <section className="relative w-full">
-        <Carousel
-          images={carouselImages}
-          interval={5000}
-          className="w-full"
-          aspectRatio="21 / 9"
-          priority
-          scrollControlled
-        />
-      </section>
-
-      {/*About Us*/}
-      <section className="max-w-8xl bg-[#E6F6F3] py-20">
-        <div className="flex w-full flex-col gap-12 px-2 md:px-10">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-bold text-gray-900 md:text-5xl">
-              About Us
-            </h2>
-          </div>
-
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div className="overflow-hidden rounded-3xl">
-              <img
-                src="/images/AboutUs.png"
-                alt="Team collaboration at ECNANOCAT"
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="flex flex-col gap-5 text-lg leading-[1.7] text-gray-800">
-              <h2 className="text-3xl font-bold text-gray-900 md:text-3xl">
-                ECNANOCAT Pvt. Ltd.
-              </h2>
-              <p>
-                Econanocat Pvt. Ltd. is a technology-driven
-                company specializing in the development and
-                manufacturing of advanced nanocatalysts, additives,
-                and functional nanoparticles for emission control
-                and performance enhancement
-              </p>
-              <h3 className='text-2xl font-bold text-gray-900 md:text-2xl'>Mission</h3>
-              <p>
-                 To develop and deliver high-performance
-                  nanocatalysts and functional additives that enable
-                  cleaner combustion, reduced emissions, and
-                  improved efficiency across automotive and
-                  industrial applications — driving sustainability
-                  through nanotechnology innovation.
-              </p>
-              <h3 className='text-2xl font-bold text-gray-900 md:text-2xl'>Vision</h3>
-              <p>
-                To be a global leader in nanocatalytic and
-                nanomaterial solutions that empower industries to
-                achieve zero-emission goals, foster sustainable
-                development, and create a healthier environment for
-                future generations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/*Our Team*/}
-
-      {/*Our Services*/}
-
-      {/*Our Products*/}
-
-      {/*Take care*/}
-
-      {/*Contact Us*/}
       <section className="max-w-8xl bg-[#F6F6F6] py-16 md:py-20">
         <div className="px-2 md:px-10 space-y-12 ">
           <div className="space-y-3">
@@ -198,7 +97,7 @@ const Home = () => {
               <div className="overflow-hidden rounded-2xl shadow-xl">
                 <iframe
                   title="ECNANOCAT office map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.567646921666!2d78.37326397512119!3d17.43068128344152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91168c9b6c27%3A0xcedcbe5d3794026d!2sCyber%20Towers!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15548.66654090144!2d80.21524823370608!3d13.02505834662011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNo.%204%2F9%20kothandam%20street%2C%20sekar%20nagar%20%20West%20saidapet%20chennai%20600083!5e0!3m2!1sen!2sin!4v1763471343549!5m2!1sen!2sin"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="h-[234px] w-full border-0"
@@ -209,11 +108,8 @@ const Home = () => {
         </div>
       </section>
 
-    
-   
-
     </div>
   );
 };
 
-export default Home;
+export default ContactUs;

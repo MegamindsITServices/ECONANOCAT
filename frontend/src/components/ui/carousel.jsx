@@ -14,13 +14,16 @@ const Carousel = ({
   showIndicators = true,
   showNavigation = true,
   animationType = "slide", // "fade" | "slide"
+  aspectRatio = "16 / 9",
+  scrollControlled = false,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState({});
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
+  const touchStartRef = useRef({ x: 0, y: 0 });
+  const touchCurrentRef = useRef({ x: 0, y: 0 });
   const carouselRef = useRef(null);
+  const scrollLockRef = useRef(false);
 
   // ---- Helpers ----
   const getImageSource = (image) =>
@@ -61,18 +64,90 @@ const Carousel = ({
   }, [images]);
 
   useEffect(() => {
-    if (!images?.length) return;
+    if (!images?.length || scrollControlled || interval <= 0) return;
     const timer = setInterval(goToNext, interval);
     return () => clearInterval(timer);
-  }, [interval, images, goToNext]);
+  }, [interval, images, goToNext, scrollControlled]);
+
+  const lockScroll = () => {
+  scrollLockRef.current = true;
+  setTimeout(() => {
+    scrollLockRef.current = false;
+  }, 600); // same as slide animation
+};
 
   // ---- Touch Swipe ----
-  const handleTouchStart = (e) => setTouchStart(e.targetTouches[0].clientX);
-  const handleTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 50) goToNext();
-    if (touchStart - touchEnd < -50) goToPrev();
+  const handleTouchStart = (e) => {
+    const touch = e.targetTouches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+    touchCurrentRef.current = { x: touch.clientX, y: touch.clientY };
   };
+
+  const handleTouchMove = (e) => {
+    const touch = e.targetTouches[0];
+    touchCurrentRef.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = () => {
+    const deltaX = touchStartRef.current.x - touchCurrentRef.current.x;
+    const deltaY = touchStartRef.current.y - touchCurrentRef.current.y;
+
+    if (scrollControlled) {
+      if (deltaY > 60 && currentIndex < images.length - 1) return goToNext();
+      if (deltaY < -60 && currentIndex > 0) return goToPrev();
+      return;
+    }
+
+    if (deltaX > 50) goToNext();
+    if (deltaX < -50) goToPrev();
+  };
+
+  const handleWheel = useCallback(
+  (event) => {
+    if (!scrollControlled || !carouselRef.current || !images?.length) return;
+
+    const rect = carouselRef.current.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    // Carousel is considered "active" only when centered
+    const isCentered =
+      rect.top <= viewportHeight * 0.45 &&
+      rect.bottom >= viewportHeight * 0.55;
+
+    if (!isCentered) return; // allow normal scrolling outside center zone
+
+    // prevent spam
+    if (scrollLockRef.current || isTransitioning) return;
+
+    // DOWN scroll → next slide
+    if (event.deltaY > 0 && currentIndex < images.length - 1) {
+      event.preventDefault();
+      goToNext();
+      lockScroll();
+    }
+
+    // UP scroll → previous slide
+    else if (event.deltaY < 0 && currentIndex > 0) {
+      event.preventDefault();
+      goToPrev();
+      lockScroll();
+    }
+  },
+  [
+    scrollControlled,
+    currentIndex,
+    images?.length,
+    isTransitioning,
+    goToNext,
+    goToPrev,
+  ]
+);
+
+  useEffect(() => {
+    if (!scrollControlled) return;
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, [scrollControlled, handleWheel]);
 
   // ---- Placeholder ----
   if (!images?.length) {
@@ -97,12 +172,13 @@ const Carousel = ({
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      style={{ aspectRatio }}
     >
       {/* Slides */}
       <div
         className={clsx(
           "relative h-full flex",
-          animationType === "slide" && "transition-transform duration-700 ease-in-out"
+          animationType === "slide" && "transition-transform duration-1000 ease-in-out"
         )}
         style={
           animationType === "slide"

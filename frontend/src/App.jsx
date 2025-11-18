@@ -10,7 +10,7 @@ import Product from './pages/Product';
 import Footer from './components/Footer';
 import Aboutus from './pages/Aboutus';
 import NotFoundPage from './pages/NotFoundPage';
-
+import ContactUs from './pages/ContactUs';
 
 
 function App() {
@@ -25,9 +25,10 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>      
-          <Route path="/product" element={<Product/>}/> 
-            <Route path="/services" element={<Services/>}/>       
-             <Route path="/about" element={<Aboutus/>}/>   
+        <Route path="/product" element={<Product/>}/> 
+        <Route path="/services" element={<Services/>}/>       
+        <Route path="/about" element={<Aboutus/>}/>
+        <Route path="/contact" element={<ContactUs/>}/>   
 
         <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
         <Route path="*" element={<NotFoundPage/>} />
