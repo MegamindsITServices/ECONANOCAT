@@ -164,9 +164,9 @@ const Home = () => {
                   <div className="space-y-3">
                     <h3 className="text-xl font-semibold text-[#173126]">Get in touch</h3>
                     <div className="space-y-1 text-lg text-[#737373]">
-                      <p>📞 +91-XXXXXXXXXX</p>
+                      <p>📞 +91 98414 89297</p>
                       <p className="underline">
-                        📧 info@ecnanocat.com / sales@ecnanocat.com
+                        📧 ecocatnano@gmail.com
                       </p>
                     </div>
                   </div>
@@ -187,9 +187,9 @@ const Home = () => {
                     <p className="text-lg leading-7 text-[#737373]">
                       ECNANOCAT Pvt. Ltd.
                       <br />
-                      123, Business Avenue,
+                      No. 4/9 kothandam street, sekar nagar
                       <br />
-                      City – State, ZIP Code, Country
+                      West saidapet chennai 600083,
                     </p>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ const Home = () => {
               <div className="overflow-hidden rounded-2xl shadow-xl">
                 <iframe
                   title="ECNANOCAT office map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.567646921666!2d78.37326397512119!3d17.43068128344152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91168c9b6c27%3A0xcedcbe5d3794026d!2sCyber%20Towers!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15548.66654090144!2d80.21524823370608!3d13.02505834662011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNo.%204%2F9%20kothandam%20street%2C%20sekar%20nagar%20%20West%20saidapet%20chennai%20600083!5e0!3m2!1sen!2sin!4v1763471343549!5m2!1sen!2sin"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="h-[234px] w-full border-0"
