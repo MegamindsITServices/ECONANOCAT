@@ -1,5 +1,4 @@
 import React, { useEffect,useState} from 'react'
-import axiosInstance from '../services/axiosInstance';
 import Carousel from '../components/ui/carousel';
 
 
@@ -18,9 +17,27 @@ const PLACEHOLDER_IMAGES = [
     alt: 'Banner',
   },
   {
-    id: 2,
+    id: 3,
     image:
       '/images/Banner3.png',
+    alt: 'Banner',
+  },
+  {
+    id: 4,
+    image:
+      '/images/Web Banner - Research and Development - Nano material.png',
+    alt: 'Banner',
+  },
+  {
+    id: 5,
+    image:
+      '/images/Web Banner - Services - 3D printing.png',
+    alt: 'Banner',
+  },
+  {
+    id: 6,
+    image:
+      '/images/Web Banner - Services - Catalyst.png',
     alt: 'Banner',
   }
 ];
@@ -39,7 +56,7 @@ const Home = () => {
           images={carouselImages}
           interval={5000}
           className="w-full"
-          aspectRatio="21 / 9"
+          aspectRatio="22 / 9"
           priority
           scrollControlled
         />
