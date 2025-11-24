@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="text-[#4FAA84] text-2xl font-bold">ECONANOCAT</div>
             <div>
-              <p className="font-bold text-lg">ECNANOCAT Pvt. Ltd.</p>
+              <p className="font-bold text-lg">ECONANOCAT Pvt. Ltd.</p>
               <p className="text-sm font-medium">All Rights Reserved</p>
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm font-medium">
               <p>Address: No. 4/9 kothandam street, sekar nagar
                   West saidapet chennai 600083</p>
-              <p>Phone:  +91 98414 89297</p>
+              <p>Phone:  +91-8124022179</p>
               <p>Email:  ecocatnano@gmail.com</p>
             </div>
           </div>

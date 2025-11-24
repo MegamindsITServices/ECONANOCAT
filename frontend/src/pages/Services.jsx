@@ -18,7 +18,7 @@ const services = [
   },
   {
     title: "Catalytic Converter Restoration",
-    subtitle: "NANO",
+    subtitle: "Nox, Sox and Cox monitoring Services",
     image: "/images/converter.png",
    points: [
   "We offer state-of-the-art catalytic converter restoration services designed to recover and enhance catalyst performance, extend service life, and reduce replacement costs.",
@@ -61,16 +61,16 @@ const Services = () => {
 
       {/* Grid Container */}
       <div
-        className=" grid gap-12 
-    grid-cols-1
-    sm:grid-cols-2
-    lg:grid-cols-3
-    place-items-center
-    mx-auto
-    "
-          
-
+        className="
+          grid gap-12 
+          grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3
+          place-items-stretch
+          mx-auto
+        "
       >
+
         {services.map((svc, idx) => (
           <motion.div
             key={idx}
@@ -88,11 +88,12 @@ const Services = () => {
                 "0 25px 40px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.05)",
             }}
             className="relative p-[1px] rounded-2xl 
-                       bg-gradient-to-br from-[#d3c5b4] to-[#ffffff]
-                       hover:shadow-2xl transition duration-100"
+             bg-gradient-to-br from-[#d3c5b4] to-[#ffffff]
+             hover:shadow-2xl transition duration-100
+             h-full flex flex-col"
           >
             {/* Inner card */}
-            <div className="bg-white rounded-2xl p-6 h-auto">
+            <div className="bg-white rounded-2xl p-6 h-full flex flex-col">
 
               {/* Floating Image Animation */}
               <motion.div
@@ -121,7 +122,7 @@ const Services = () => {
               <div className="w-full h-px bg-gray-300 mb-4"></div>
 
               {/* Bullets */}
-              <ul className="text-gray-700 text-sm space-y-2 leading-relaxed font-semibold">
+              <ul className="text-gray-700 text-sm space-y-2 leading-relaxed font-semibold flex-1">
                 {svc.points.map((p, i) => (
                   <li key={i} className="list-disc list-inside">
                     {p}

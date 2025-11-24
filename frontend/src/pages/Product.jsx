@@ -9,8 +9,28 @@ const Product = () => {
       points: ["KITS", "MCM41", "SBA-15"],
     },
     {
+      image: "/images/metal-organic.jpg", 
+      title: "Metal Organic Frameworks",
+      points: [
+        "ZIF",
+        "MIL",
+        "MOF",
+        "BTC",
+        "UiO etc.",
+      ],
+    },
+    {
+      image: "/images/mesoporous-silica.png", // Ensure this image exists
+      title: "Mesoporous Silicas",
+      points: [
+        "MCMs (MCM-41, MCM-50 etc.)",
+        "SBAs (SBA-15, SBA-16 etc.)",
+        "KITs (KIT-6, KIT-5, KIT-4 etc.)",
+      ],
+    },
+    {
       image: "/images/product2.png",
-      title: "Nanomaterials such as",
+      title: "Nano-sized Metal oxides and metals",
       points: [
         "Nano TiO2",
         "Nano alumina",
@@ -22,16 +42,42 @@ const Product = () => {
     },
     {
       image: "/images/product3.png",
-      title: "Nano supported catalyst",
+      title: "Mono & poly dispersed supported nanometals and its oxides and single atom metal catalysts",
       points: [
-        "Nano Pt",
-        "Nano Cu",
-        "Nano Ni",
-        "Nano Mo",
-        "Nano Mn",
-        "Nano Au",
-        "Nano Fe on metals oxide",
-        "Nano silica materials",
+        "Pt",
+        "Cu",
+        "Mn",
+        "Mo",
+        "Ni",
+        "Au",
+        "Ag",
+        "On supports like silica, alumina, Titania and Zirconia, Carbon and ceramic mateirals etc .",
+      ],
+    },
+    {
+    image: "/images/clays.avif",
+    title: "Clays",
+    points: [
+      "Synthetic Laponite",
+      "Montmorillonite",
+      "Kaolin",
+      "Kaolinite",
+      "Zeolite",
+      "Bentonite",
+      "Saponite",
+      "Mordenite and it's Organoclays etc."
+    ],
+  },
+  {
+      image: "/images/carbon.webp", // Ensure this image exists
+      title: "Carbons",
+      points: [
+        "Activated Carbon",
+        "Carbon black",
+        "Carbon nanotubes",
+        "Graphene oxide",
+        "Graphite",
+        "Mesoporous Carbon",
       ],
     },
   ];
@@ -65,11 +111,12 @@ const Product = () => {
           grid-cols-1
           sm:grid-cols-2
           lg:grid-cols-3
-          place-items-center
+          place-items-stretch
           max-w-7xl mx-auto
           mt-10
         "
       >
+
         {products.map((p, idx) => (
           <motion.div
             key={idx}
@@ -79,11 +126,12 @@ const Product = () => {
             viewport={{ once: true }}
             whileHover={{
               scale: 1.04,
-              boxShadow:
-                "0 20px 40px rgba(0,0,0,0.15), 0 6px 12px rgba(0,0,0,0.05)",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.15), 0 6px 12px rgba(0,0,0,0.05)",
             }}
-            className="bg-white border rounded-xl p-6 w-full max-w-sm shadow-sm transition-all duration-300"
+            className="bg-white border rounded-xl p-6 w-full max-w-sm shadow-sm 
+                      transition-all duration-300 h-full flex flex-col"
           >
+
             {/* Floating image animation */}
             <motion.img
               src={p.image}
@@ -97,7 +145,7 @@ const Product = () => {
               {p.title}
             </h3>
 
-            <ul className="text-gray-700 text-sm space-y-1 leading-relaxed">
+            <ul className="text-gray-700 text-sm space-y-1 leading-relaxed flex-1">
               {p.points.map((pt, i) => (
                 <li key={i} className="list-disc list-inside font-semibold">
                   {pt}

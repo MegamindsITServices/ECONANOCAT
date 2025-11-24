@@ -63,7 +63,7 @@ const ContactUs = () => {
                   <div className="space-y-3">
                     <h3 className="text-xl font-semibold text-[#173126]">Get in touch</h3>
                     <div className="space-y-1 text-lg text-[#737373]">
-                      <p>📞 +91 98414 89297</p>
+                      <p>📞 +91-8124022179</p>
                       <p className="underline">
                         📧 ecocatnano@gmail.com
                       </p>
@@ -84,7 +84,7 @@ const ContactUs = () => {
                   <div className="space-y-3">
                     <h3 className="text-xl font-semibold text-[#173126]">Office Address</h3>
                     <p className="text-lg leading-7 text-[#737373]">
-                      ECNANOCAT Pvt. Ltd.
+                      ECONANOCAT Pvt. Ltd.
                       <br />
                       No. 4/9 kothandam street, sekar nagar
                       <br />

@@ -13,7 +13,7 @@ const PLACEHOLDER_IMAGES = [
   {
     id: 2,
     image:
-      '/images/image.png',
+      '/images/Banner-aim.png',
     alt: 'Banner',
   },
   {
@@ -75,14 +75,14 @@ const Home = () => {
             <div className="overflow-hidden rounded-3xl">
               <img
                 src="/images/AboutUs.png"
-                alt="Team collaboration at ECNANOCAT"
+                alt="Team collaboration at ECONANOCAT"
                 className="h-full w-full object-cover"
               />
             </div>
 
             <div className="flex flex-col gap-5 text-lg leading-[1.7] text-gray-800">
               <h2 className="text-3xl font-bold text-gray-900 md:text-3xl">
-                ECNANOCAT Pvt. Ltd.
+                ECONANOCAT Pvt. Ltd.
               </h2>
               <p>
                 Econanocat Pvt. Ltd. is a technology-driven
@@ -181,7 +181,7 @@ const Home = () => {
                   <div className="space-y-3">
                     <h3 className="text-xl font-semibold text-[#173126]">Get in touch</h3>
                     <div className="space-y-1 text-lg text-[#737373]">
-                      <p>📞 +91 98414 89297</p>
+                      <p>📞 +91-8124022179</p>
                       <p className="underline">
                         📧 ecocatnano@gmail.com
                       </p>
@@ -202,7 +202,7 @@ const Home = () => {
                   <div className="space-y-3">
                     <h3 className="text-xl font-semibold text-[#173126]">Office Address</h3>
                     <p className="text-lg leading-7 text-[#737373]">
-                      ECNANOCAT Pvt. Ltd.
+                      ECONANOCAT Pvt. Ltd.
                       <br />
                       No. 4/9 kothandam street, sekar nagar
                       <br />

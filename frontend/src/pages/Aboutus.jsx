@@ -77,53 +77,33 @@ const Aboutus = () => {
       <section className="bg-[#212121] py-20 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            {/* Applying the font here as well for consistency */}
             <h2 className="text-5xl font-bodoni tracking-wide">Our Team</h2>
             <div className="mx-auto mt-4 h-px w-full max-w-xs bg-white opacity-50"></div>
           </div>
-          
-          <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-3">
-            {/* Team Member 1 */}
+
+          <div className="grid grid-cols-1 gap-12 text-center md:grid-cols-1">
+            
+            {/* Team Member */}
             <div className="flex flex-col items-center group">
               <div className="mb-4 h-[400px] w-[300px] overflow-hidden relative">
                 <img
                   src="https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?q=80&w=2080&auto=format&fit=crop"
-                  alt="Dr. Santhana Krishnan"
+                  alt="Dr. P. Santhana Krishnan"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <h3 className="text-2xl font-bodoni">Dr. Santhana Krishnan</h3>
-              <p className="font-sans text-xs font-bold tracking-[0.2em] mt-2 text-gray-400">FOUNDER</p>
+
+              <h3 className="text-2xl font-bodoni">Dr. P. Santhana Krishnan</h3>
+
+              <p className="font-sans text-xs font-bold tracking-[0.2em] mt-2 text-gray-400">
+                FOUNDER & FORMER RESEARCH PROFESSOR @ PUKYONG NATIONAL UNIVERSITY, SOUTH KOREA
+              </p>
             </div>
 
-            {/* Team Member 2 */}
-            <div className="flex flex-col items-center group">
-              <div className="mb-4 h-[400px] w-[300px] overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?q=80&w=2080&auto=format&fit=crop"
-                  alt="Dr. Preethi"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-2xl font-bodoni">Dr. Preethi</h3>
-              <p className="font-sans text-xs font-bold tracking-[0.2em] mt-2 text-gray-400">TECHNICAL ADVISER</p>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="flex flex-col items-center group">
-              <div className="mb-4 h-[400px] w-[300px] overflow-hidden relative">
-                <img
-                  src="https://images.unsplash.com/photo-1597589827317-4c6d6e0a90bd?q=80&w=2080&auto=format&fit=crop"
-                  alt="Yves Dunne"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-2xl font-bodoni">Yves Dunne</h3>
-              <p className="font-sans text-xs font-bold tracking-[0.2em] mt-2 text-gray-400">SENIOR HAIR STYLIST</p>
-            </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 }
