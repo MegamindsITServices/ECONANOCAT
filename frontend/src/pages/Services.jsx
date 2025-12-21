@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { motion } from "framer-motion";
+import { Helmet } from 'react-helmet-async';
 
 const services = [
   {
@@ -47,6 +48,19 @@ const services = [
 const Services = () => {
   return (
     <div className=" w-full bg-[#f5e6cf] py-20 px-6">
+      <Helmet>
+        <title>
+          Econanocat Pvt. Ltd. | Nanocatalyst Development & Restoration Services
+        </title>
+        <meta
+          name="description"
+          content="Econanocat offers nanocatalyst development, NOx-SOx-COx monitoring, catalytic converter restoration, and advanced 3D printing services for industrial and automotive applications."
+        />
+        <meta
+          name="keywords"
+          content="nanocatalyst services, catalyst development, NOx monitoring, catalytic converter restoration, 3D printing catalysts"
+        />
+      </Helmet>
 
       {/* Heading Animation */}
       <motion.h2
@@ -70,7 +84,6 @@ const Services = () => {
           mx-auto
         "
       >
-
         {services.map((svc, idx) => (
           <motion.div
             key={idx}
@@ -78,7 +91,6 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: idx * 0.18, ease: "easeOut" }}
             viewport={{ once: true }}
-
             // PREMIUM hover animations
             whileHover={{
               scale: 1.05,
@@ -94,11 +106,14 @@ const Services = () => {
           >
             {/* Inner card */}
             <div className="bg-white rounded-2xl p-6 h-full flex flex-col">
-
               {/* Floating Image Animation */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="flex justify-center mb-4"
               >
                 <img

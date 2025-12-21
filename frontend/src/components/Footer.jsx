@@ -4,21 +4,21 @@ import { RiWhatsappFill } from "react-icons/ri";
 
 // 2. Add icon components to the data
 const FOLLOW_LINKS = [
-  { label: "what's app", href: "#", icon: <RiWhatsappFill  size={20} /> },
-  { label: "Linked In", href: "#", icon: <FaLinkedin  size={20} /> },
+  { label: "whatsApp", href: "#", icon: <RiWhatsappFill  size={20} /> },
+  { label: "LinkedIn", href: "#", icon: <FaLinkedin  size={20} /> },
   { label: "Facebook", href: "#", icon: <FaFacebook  size={20} /> },
 ];
 
 const QUICK_LINKS = [
-  { label: "About Us", href: "#" },
-  { label: "Products/Services", href: "#" },
-  { label: "Contact Us", href: "#" },
+  { label: "About Us", href: "about" },
+  { label: "Products/Services", href: "product" },
+  { label: "Contact Us", href: "contact" },
 ];
 
 const PRODUCT_LINKS = [
-  { label: "Featured Products", href: "#" },
-  { label: "Top Rated Products", href: "#" },
-  { label: "Lates Products", href: "#" }, // Corrected "Lates" to "Latest" if needed
+  { label: "Featured Products", href: "product" },
+  { label: "Top Rated Products", href: "product" },
+  { label: "Latest Products", href: "product" }, 
 ];
 
 export default function Footer() {

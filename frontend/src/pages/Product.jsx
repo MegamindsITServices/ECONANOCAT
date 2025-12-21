@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const Product = () => {
  const products = [
@@ -84,6 +85,19 @@ const Product = () => {
 
   return (
     <div className="w-full bg-[#f4f0e8] py-14 px-6">
+      <Helmet>
+        <title>
+          Nanocatalyst & Nanomaterial Products | Econanocat Pvt. Ltd.
+        </title>
+        <meta
+          name="description"
+          content="Explore Econanocat’s advanced nanomaterials including mesoporous silicas, metal organic frameworks, nano metal oxides, supported nanometals, clays, zeolites, and carbon materials."
+        />
+        <meta
+          name="keywords"
+          content="nanocatalyst products, mesoporous silica, MOF, nano metal oxides, zeolites, activated carbon, Econanocat products"
+        />
+      </Helmet>
 
       {/* ================== TITLE ================== */}
       <motion.h2
@@ -116,7 +130,6 @@ const Product = () => {
           mt-10
         "
       >
-
         {products.map((p, idx) => (
           <motion.div
             key={idx}
@@ -126,12 +139,12 @@ const Product = () => {
             viewport={{ once: true }}
             whileHover={{
               scale: 1.04,
-              boxShadow: "0 20px 40px rgba(0,0,0,0.15), 0 6px 12px rgba(0,0,0,0.05)",
+              boxShadow:
+                "0 20px 40px rgba(0,0,0,0.15), 0 6px 12px rgba(0,0,0,0.05)",
             }}
             className="bg-white border rounded-xl p-6 w-full max-w-sm shadow-sm 
                       transition-all duration-300 h-full flex flex-col"
           >
-
             {/* Floating image animation */}
             <motion.img
               src={p.image}
@@ -158,7 +171,6 @@ const Product = () => {
 
       {/* ================== BOTTOM SECTION (IMAGE + TEXT) ================== */}
       <div className="max-w-7xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-10">
-        
         {/* LEFT IMAGE */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
@@ -196,15 +208,15 @@ const Product = () => {
           <div className=" w-90 h-[2px] bg-black mb-4 "></div>
 
           {/* Image */}
-      <motion.img 
-     src="/images/rightImg.png"
-     className="w-[100%] rounded-lg shadow-md object-cover mb-2 relative"
-    alt="Image"
-     initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-     viewport={{ once: true }}
-      />
+          <motion.img
+            src="/images/rightImg.png"
+            className="w-[100%] rounded-lg shadow-md object-cover mb-2 relative"
+            alt="Image"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          />
 
           <motion.p
             initial={{ opacity: 0 }}

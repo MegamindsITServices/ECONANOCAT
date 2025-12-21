@@ -5,7 +5,7 @@ import axiosInstance from '../services/axiosInstance';
 const useAuthStore = create((set, get) => ({
   user: null,
   token: localStorage.getItem('token') || null,
-  isLoading: false, // Changed initial state to false
+  isLoading: false,
   error: null,
   isAuthenticated: false,
 
@@ -57,7 +57,7 @@ const useAuthStore = create((set, get) => ({
   logout: () => {
     set({ user: null, isAuthenticated: false });
     get().setAuthToken(null);
-    toast.success('Logged out successfully!');
+    // toast.success('Logged out successfully!');
   },
 
   // Load user on app start

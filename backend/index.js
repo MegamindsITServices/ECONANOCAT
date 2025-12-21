@@ -1,27 +1,22 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import {connectDB} from './config/db.js';
-import mongoose from 'mongoose';
-
+import contactUsRoutes from './routes/contactRoute.js';
 
 dotenv.config();
 
 const app = express();
 connectDB();
 
-const testSchema = new mongoose.Schema({ message: String });
-const Test = mongoose.model('Test', testSchema);
-
-await Test.create({ message: 'Hello ECONANOCAT!' });
-console.log('✅ Test collection created successfully');
-
 // Middleware
 app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
-app.use(cookieParser());
 app.use(express.json());
 
+app.use('/api/contact', contactUsRoutes);
+app.use('/', (req, res) => {
+  res.send('ECONANOCAT');
+});
 
 // Server
 const PORT = process.env.PORT || 3000;
