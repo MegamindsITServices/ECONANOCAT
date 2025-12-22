@@ -87,7 +87,7 @@ const Product = () => {
     <div className="w-full bg-[#f4f0e8] py-14 px-6">
       <Helmet>
         <title>
-          Nanocatalyst & Nanomaterial Products | Econanocat Pvt. Ltd.
+          Products - Nanocatalyst & Nanomaterial Products | Econanocat Pvt. Ltd.
         </title>
         <meta
           name="description"

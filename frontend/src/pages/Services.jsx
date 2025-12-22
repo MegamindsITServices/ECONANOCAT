@@ -50,7 +50,7 @@ const Services = () => {
     <div className=" w-full bg-[#f5e6cf] py-20 px-6">
       <Helmet>
         <title>
-          Econanocat Pvt. Ltd. | Nanocatalyst Development & Restoration Services
+          Services - Econanocat Pvt. Ltd. | Nanocatalyst Development & Restoration Services
         </title>
         <meta
           name="description"
