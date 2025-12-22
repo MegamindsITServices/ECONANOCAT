@@ -56,12 +56,14 @@ jobs:
             
             # 4. Restart PM2
             echo "🔁 Restarting PM2 on port 5005..."
-            # Check if process exists by name
+            cd /root/econanocat/backend # Ensure we are in the backend dir
+            
             if pm2 describe econanocat > /dev/null 2>&1; then
               echo "🔄 Process exists, restarting..."
               pm2 restart econanocat
             else
               echo "🚀 Process doesn't exist, starting fresh..."
+              # Target index.js directly in the backend folder
               PORT=5005 pm2 start index.js --name econanocat
             fi
 
