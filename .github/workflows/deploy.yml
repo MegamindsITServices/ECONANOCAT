@@ -26,10 +26,11 @@ jobs:
             set -e
             echo "✅ Connected to Econanocat VPS"
             
-            # Load Node environment (Adjust version if necessary)
-            export PATH=$PATH:/root/.nvm/versions/node/v20.16.0/bin
+            # Use 'which' to dynamically find node/npm path or use standard local path
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-            # Navigate to project
+            # Navigate to project (Now the .git folder is here)
             cd /root/econanocat
             
             echo "📥 Pulling latest changes..."
@@ -37,11 +38,10 @@ jobs:
 
             # Build Frontend
             echo "🧱 Building frontend..."
-            # Adjust if your frontend is in a subfolder or root
             npm install
             npm run build
             
-            echo "📤 Moving build files to /var/www/econanocat..."
+            echo "📤 Refreshing /var/www/econanocat..."
             sudo mkdir -p /var/www/econanocat/dist
             sudo rm -rf /var/www/econanocat/dist/*
             sudo cp -R dist/* /var/www/econanocat/dist/
@@ -51,16 +51,16 @@ jobs:
 
             # Setup backend
             echo "🧩 Setting up backend..."
-            # Navigate to your backend folder (e.g., /server or /backend)
             cd backend 
             npm install
             
             # Restart PM2
-            echo "🔁 Restarting PM2 process..."
+            echo "🔁 Restarting PM2 on port 5005..."
             if pm2 list | grep -q "econanocat"; then
               pm2 restart econanocat
             else
-              pm2 start server.js --name econanocat -- 5005
+              # Passing the port as an environment variable is cleaner
+              PORT=5005 pm2 start server.js --name econanocat
             fi
 
             pm2 save
