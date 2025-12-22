@@ -56,10 +56,12 @@ jobs:
             
             # 4. Restart PM2
             echo "🔁 Restarting PM2 on port 5005..."
-            # Using index.js as per your git logs
-            if pm2 list | grep -q "econanocat"; then
+            # Check if process exists by name
+            if pm2 describe econanocat > /dev/null 2>&1; then
+              echo "🔄 Process exists, restarting..."
               pm2 restart econanocat
             else
+              echo "🚀 Process doesn't exist, starting fresh..."
               PORT=5005 pm2 start index.js --name econanocat
             fi
 
