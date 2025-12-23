@@ -18,7 +18,7 @@ app.use(express.json());
 
 app.use('/api/contact', contactUsRoutes);
 app.use('/', (req, res) => {
-  res.send('ECONANOCAT');
+  res.send('Welcome to Econanocat');
 });
 
 // Server
