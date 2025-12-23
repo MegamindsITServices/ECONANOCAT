@@ -2,11 +2,11 @@ import axios from 'axios';
 import useAuthStore from '../stores/authStore';
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL || 'http://localhost:5005/api',
+  baseURL: import.meta.env.VITE_BACKEND_URL || "https://api.econanocat.com/api",
   timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
-  }
+    "Content-Type": "application/json",
+  },
 });
 
 // Request interceptor
