@@ -10,7 +10,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
+app.use(cors({ origin:[
+    "https://econanocat.com", 
+    "https://www.econanocat.com"
+  ], credentials: true }));
 app.use(express.json());
 
 app.use('/api/contact', contactUsRoutes);
