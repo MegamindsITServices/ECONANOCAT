@@ -10,10 +10,18 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({ origin:[
+app.use(cors({ 
+  origin: [
     "https://econanocat.com", 
-    "https://www.econanocat.com"
-  ], credentials: true }));
+    "https://www.econanocat.com",
+    "http://econanocat.com",    
+    "http://www.econanocat.com"
+  ], 
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 
 app.use('/api/contact', contactUsRoutes);
